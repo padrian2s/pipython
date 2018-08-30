@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: pi
-        image: docker-registry.default.svc:5000/bell/pi-headless
-        command: ["python",  "app.py"]
+        image: docker-registry.default.svc:5000/bell/pi-python
+        command: ["python",  "pi.py"]
       restartPolicy: OnFailure
