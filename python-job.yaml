@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pi
+spec:
+  parallelism: 1
+  completions: 1
+  template:
+    metadata:
+      name: pi
+    spec:
+      containers:
+      - name: pi
+        image: docker-registry.default.svc:5000/bell/pi-headless
+        command: ["python",  "app.py"]
+      restartPolicy: OnFailure
